@@ -1,2 +1,6 @@
-<button class="btn btn-primary" [disabled]="!acceptNewSchool">Add</button>
+<button class="btn btn-primary" [disabled]="!acceptNewSchool" (click)="createSchool()">Add</button>
+
+<p>{{createdSchoolStatus}}</p>
+
+
 <p>School {{schoolId}} name is {{schoolName}}</p>

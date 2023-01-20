@@ -7,6 +7,11 @@ import {Component, OnInit } from "@angular/core";
 
 export class SchoolComponent {
 
+    createdSchoolStatus = "None school created";
+    schoolId: number = 10;
+    schoolName: string = "Highriders school";
+    acceptNewSchool: boolean = false;
+
     constructor () {}
 
     ngOnInit(): void {
@@ -14,7 +19,8 @@ export class SchoolComponent {
             this.acceptNewSchool = true;
         }, 3000);
     }
-    schoolId: number = 10;
-    schoolName: string = "Highriders school";
-    acceptNewSchool: boolean = false;
+    createSchool(){
+        this.createdSchoolStatus = "School created";
+    }
+    
 }
