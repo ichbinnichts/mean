@@ -1,10 +1,11 @@
 <input type="text" class="form-control" (input)="updateSchoolName($event)">
 <button class="btn btn-primary" (click)="createSchool()">Create School</button>
 
-<div *ngFor="let school of schools">
+<!-- <div *ngFor="let school of schools">
 <p [ngStyle]="{ 'background' : getStatusColor() }" *ngIf="schoolCreatedStatus"
 
     [ngClass]="{ 'open' : schoolStatus === 'open' }">School {{schoolId}} its name is {{getSchoolName()}} </p>
 
-</div>
+</div> -->
+<p *ngFor="let school of schools; let i = index">{{i}} - {{school}}</p>
 
