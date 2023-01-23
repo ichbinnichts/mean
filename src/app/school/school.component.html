@@ -1,6 +1,7 @@
+<label>School name</label>
+<input type="text" class="form-control (input)="updateSchoolName($event)">
+<p>{{schoolName}}</p>
+
 <button class="btn btn-primary" [disabled]="!acceptNewSchool" (click)="createSchool()">Add</button>
 
 <p>{{createdSchoolStatus}}</p>
-
-
-<p>School {{schoolId}} name is {{schoolName}}</p>

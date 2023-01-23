@@ -9,7 +9,7 @@ export class SchoolComponent {
 
     createdSchoolStatus = "None school created";
     schoolId: number = 10;
-    schoolName: string = "Highriders school";
+    schoolName: string = "";
     acceptNewSchool: boolean = false;
 
     constructor () {}
@@ -21,6 +21,9 @@ export class SchoolComponent {
     }
     createSchool(){
         this.createdSchoolStatus = "School created";
+    }
+    updateSchoolName(event: Event){
+        this.schoolName = (<HTMLInputElement>event.target).value;
     }
     
 }
