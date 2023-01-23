@@ -1,11 +1,7 @@
-<h1>Hello</h1>
-<label>School name</label><br>
-<input type="text" class="form-control" [(ngModel)]="schoolName">
-<p>{{schoolName}}</p>
+<input type="text" class="form-control" (input)="updateSchoolName($event)">
+<button class="btn btn-primary" (click)="createSchool()">Create School</button>
 
-<button class="btn btn-primary" [disabled]="!acceptNewSchool" (click)="createSchool()">Add</button>
+<p [ngStyle]="{ 'background' : getStatusColor() }" *ngIf="schoolCreatedStatus">School {{schoolId}} its name is {{getSchoolName()}} </p>
 
-<p *ngIf="schoolCreated; else noSchool">{{createdSchoolStatus}}</p>
-<ng-template #noSchool>
-    <p>No school created</p>
-</ng-template>
+
+

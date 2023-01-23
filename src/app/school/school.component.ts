@@ -8,25 +8,25 @@ import {Component, OnInit } from "@angular/core";
 
 export class SchoolComponent {
 
-    createdSchoolStatus = "None school created";
     schoolId: number = 10;
     schoolName: string = "";
-    acceptNewSchool: boolean = false;
-    schoolCreated: boolean = false;
+    schoolStatus: string = 'open';
+    schoolCreatedStatus: boolean = false;
 
-    constructor () {}
-
-    ngOnInit(): void {
-        setTimeout(() => {
-            this.acceptNewSchool = true;
-        }, 3000);
+    constructor(){
+        this.schoolStatus = Math.random() > 0.5 ? 'open' : 'closed';
     }
-    createSchool(){
-        this.createdSchoolStatus = "School created";
-        this.schoolCreated = true;
+
+    getSchoolName(){
+        return this.schoolName;
+    }
+    getStatusColor(){
+        return this.schoolStatus === 'open' ? 'green' : 'red'; 
     }
     updateSchoolName(event: Event){
         this.schoolName = (<HTMLInputElement>event.target).value;
     }
-    
+    createSchool(){
+        this.schoolCreatedStatus = true;
+    }
 }
