@@ -1,3 +1,4 @@
+import { SchoolsComponent } from './../schools/schools.component';
 import {Component, OnInit } from "@angular/core";
 
 @Component({
@@ -13,6 +14,7 @@ export class SchoolComponent {
     schoolName: string = "";
     schoolStatus: string = 'open';
     schoolCreatedStatus: boolean = false;
+    schools: string[] = [];
 
     constructor(){
         this.schoolStatus = Math.random() > 0.5 ? 'open' : 'closed';
@@ -29,5 +31,6 @@ export class SchoolComponent {
     }
     createSchool(){
         this.schoolCreatedStatus = true;
+        this.schools.push(this.schoolName);
     }
 }
