@@ -1,7 +1,9 @@
 <input type="text" class="form-control" (input)="updateSchoolName($event)">
 <button class="btn btn-primary" (click)="createSchool()">Create School</button>
 
-<p [ngStyle]="{ 'background' : getStatusColor() }" *ngIf="schoolCreatedStatus">School {{schoolId}} its name is {{getSchoolName()}} </p>
+<p [ngStyle]="{ 'background' : getStatusColor() }" *ngIf="schoolCreatedStatus"
+
+    [ngClass]="{ 'open' : schoolStatus === 'open' }">School {{schoolId}} its name is {{getSchoolName()}} </p>
 
 
 
