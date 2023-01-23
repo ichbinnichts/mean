@@ -1,9 +1,8 @@
 <h1>Hello</h1>
 <label>School name</label><br>
-<!-- <input type="text" class="form-control" (input)="updateSchoolName($event)"> -->
 <input type="text" class="form-control" [(ngModel)]="schoolName">
 <p>{{schoolName}}</p>
 
 <button class="btn btn-primary" [disabled]="!acceptNewSchool" (click)="createSchool()">Add</button>
 
-<p>{{createdSchoolStatus}}</p>
+<p *ngIf="schoolCreated">{{createdSchoolStatus}}</p>
